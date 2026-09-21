@@ -1,0 +1,145 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <!-- Back Navigation Link -->
+        <a href="/clubs" class="back-link-nav">
+            &larr; Back to Clubs Directory
+        </a>
+
+        <div class="detail-split-grid">
+            
+            <!-- Main Content Card Left -->
+            <div class="detail-card-main">
+                <div class="detail-hero-media">
+                    <img src="<%= club.image %>" alt="<%= club.name %>">
+                    <div class="club-overlay"></div>
+                    <span class="club-badge" style="top: 24px; left: 24px; font-size: 0.85rem; padding: 6px 16px;">
+                        <%= club.category %>
+                    </span>
+                    <span class="club-badge" style="top: 24px; right: 24px; background: rgba(10, 13, 32, 0.85); font-size: 0.85rem; padding: 6px 16px;">
+                        Club ID: <%= club.clubId %>
+                    </span>
+                </div>
+
+                <div class="detail-body">
+                    <h1 class="detail-title"><%= club.name %></h1>
+                    <p class="detail-desc"><%= club.description %></p>
+
+                    <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: #fff;">About Our Community</h3>
+                    <p style="color: var(--text-body); line-height: 1.7; margin-bottom: 24px;">
+                        We are an active, inclusive student-driven organization dedicated to empowering campus members through hands-on workshops, peer code reviews, hackathons, and collaborative flagship projects.
+                    </p>
+
+                    <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: #fff;">Membership Benefits</h3>
+                    <ul class="community-checklist" style="margin-bottom: 30px;">
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span>Access to club lab equipment, computing hardware, and project workspaces.</span>
+                        </li>
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span>Priority passes and fee waivers for flagship events and hackathons.</span>
+                        </li>
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span>Mentorship from senior students and networking with alumni in tech &amp; research.</span>
+                        </li>
+                    </ul>
+
+                    <div style="padding: 24px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: var(--radius-md);">
+                        <h4 style="color: #fff; margin-bottom: 6px;">Ready to join our next meeting?</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 14px;">
+                            Reach out directly via email or drop by our meeting room at the designated time below.
+                        </p>
+                        <a href="mailto:<%= club.email %>" class="btn-primary" style="padding: 10px 24px;">
+                            <span>Email <%= club.president %> &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Specifications Right -->
+            <aside class="sidebar-glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.25rem;">Club Overview</h3>
+                    <span style="font-size: 0.75rem; color: var(--neon-cyan); font-weight: 700; background: rgba(6, 182, 212, 0.15); padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(6, 182, 212, 0.3);">
+                        <%= club.members %> Active Members
+                    </span>
+                </div>
+
+                <div class="meta-spec-list">
+                    <!-- President -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Club President</div>
+                            <div class="spec-value"><%= club.president %></div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Coordinator -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Faculty Coordinator</div>
+                            <div class="spec-value"><%= club.facultyCoordinator %></div>
+                        </div>
+                    </div>
+
+                    <!-- Meeting Day -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Meeting Schedule</div>
+                            <div class="spec-value"><%= club.meetingDay %> • <%= club.meetingTime %></div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Meeting Room / Location</div>
+                            <div class="spec-value"><%= club.location %></div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Contact Email</div>
+                            <div class="spec-value"><%= club.email %></div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="mailto:<%= club.email %>?subject=Request%20to%20Join%20<%= encodeURIComponent(club.name) %>" class="btn-primary" style="width: 100%; text-align: center;">
+                    <span>Join Club via Email &rarr;</span>
+                </a>
+            </aside>
+
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

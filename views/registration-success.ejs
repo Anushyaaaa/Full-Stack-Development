@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <div class="success-box-card">
+            
+            <!-- Glowing Success Icon -->
+            <div class="success-icon-badge">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #10b981;">
+                Registration Confirmed
+            </span>
+
+            <h1 style="font-size: 2.4rem; margin: 12px 0 8px;">Registration Successful!</h1>
+            <p style="color: var(--text-body); max-width: 500px; margin: 0 auto;">
+                Your pass has been officially recorded in the campus event registry. Present your Registration ID or student ID card at the venue entrance.
+            </p>
+
+            <!-- Official Registration Receipt Sheet -->
+            <div class="receipt-sheet">
+                
+                <div class="receipt-item">
+                    <span class="receipt-label">Registration ID</span>
+                    <span class="receipt-val" style="color: var(--neon-cyan); font-family: monospace; font-size: 1.15rem;">
+                        <%= registration.registrationId %>
+                    </span>
+                </div>
+
+                <div class="receipt-item">
+                    <span class="receipt-label">Registration Status</span>
+                    <span class="receipt-val" style="color: #10b981;">
+                        &#9679; <%= registration.status %>
+                    </span>
+                </div>
+
+                <div class="receipt-item">
+                    <span class="receipt-label">Student Name</span>
+                    <span class="receipt-val"><%= registration.studentName %></span>
+                </div>
+
+                <div class="receipt-item">
+                    <span class="receipt-label">Student ID</span>
+                    <span class="receipt-val"><%= registration.studentId %></span>
+                </div>
+
+                <div class="receipt-item">
+                    <span class="receipt-label">Event</span>
+                    <span class="receipt-val"><%= event ? event.title : registration.eventId %></span>
+                </div>
+
+                <div class="receipt-item">
+                    <span class="receipt-label">Event Date &amp; Time</span>
+                    <span class="receipt-val"><%= event ? `${event.date} • ${event.time}` : 'See event schedule' %></span>
+                </div>
+
+                <div class="receipt-item" style="grid-column: 1 / -1;">
+                    <span class="receipt-label">Venue &amp; Location</span>
+                    <span class="receipt-val">
+                        <%= event ? `${event.venue} (${event.address})` : 'Campus Arena' %>
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <% if (event) { %>
+                    <a href="<%= event.mapUrl %>" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <span>View Venue on Google Maps &rarr;</span>
+                    </a>
+                    <a href="/events/<%= event.eventId %>" class="btn-primary">
+                        <span>View Event Page &rarr;</span>
+                    </a>
+                <% } %>
+                <a href="/events" class="btn-secondary">
+                    <span>Explore More Events</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

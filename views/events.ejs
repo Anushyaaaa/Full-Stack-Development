@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+            <span class="section-tag">Campus Calendar</span>
+            <h1 class="section-title">Explore All Campus Events</h1>
+            <p class="section-subtitle">
+                Filter by technical, cultural, sports, and academic competitions happening across campus.
+            </p>
+        </div>
+
+        <!-- Pure HTML Category Filter Tabs (Zero JavaScript) -->
+        <div class="category-filter-bar">
+            <% categories.forEach(cat => { %>
+                <a href="/events<%= cat.toLowerCase() === 'all' ? '' : '?category=' + cat %>" 
+                   class="category-tab <%= (selectedCategory.toLowerCase() === cat.toLowerCase() || (cat === 'All' && selectedCategory.toLowerCase() === 'all')) ? 'active' : '' %>">
+                    <%= cat %>
+                </a>
+            <% }) %>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <% if (events && events.length > 0) { %>
+                <% events.forEach(event => { %>
+                    <% 
+                       let badgeClass = 'badge-tech';
+                       if (event.category.toLowerCase().includes('cultur')) badgeClass = 'badge-cultural';
+                       else if (event.category.toLowerCase().includes('sport')) badgeClass = 'badge-sports';
+                       else if (event.category.toLowerCase().includes('acad')) badgeClass = 'badge-academic';
+                       
+                       let day = '24';
+                       let month = 'OCT';
+                       if (event.date) {
+                           const parts = event.date.split('-');
+                           if (parts.length === 3) {
+                               day = parts[2];
+                               const mIdx = parseInt(parts[1], 10) - 1;
+                               const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+                               month = months[mIdx] || 'OCT';
+                           }
+                       }
+                    %>
+                    <article class="event-card">
+                        <div class="event-thumbnail-wrap">
+                            <img class="event-thumbnail" src="<%= event.image %>" alt="<%= event.title %>">
+                            <div class="event-overlay"></div>
+                            <span class="event-badge <%= badgeClass %>"><%= event.category %></span>
+                            <div class="event-date-pill">
+                                <div class="day"><%= day %></div>
+                                <div class="month"><%= month %></div>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <div class="event-meta-info">
+                                <span>&#128205; <%= event.venue %></span>
+                                <span>&#128101; <%= event.registeredCount %> / <%= event.capacity %> Registered</span>
+                            </div>
+                            <h3><%= event.title %></h3>
+                            <p><%= event.description %></p>
+                            <div class="event-footer">
+                                <span style="font-size: 0.8rem; color: #10b981; font-weight: 600;"><%= event.time %></span>
+                                <div style="display: flex; gap: 12px; align-items: center;">
+                                    <a href="/register?eventId=<%= event.eventId %>" style="font-size: 0.85rem; color: var(--electric-blue); font-weight: 600;">Register</a>
+                                    <a href="/events/<%= event.eventId %>" class="event-action-link">
+                                        <span>Details</span>
+                                        <span>&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                <% }) %>
+            <% } else { %>
+                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                    <h3>No events found in this category</h3>
+                    <p style="color: var(--text-muted); margin: 12px 0 24px;">Check back soon or explore other categories!</p>
+                    <a href="/events" class="btn-primary">View All Events</a>
+                </div>
+            <% } %>
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

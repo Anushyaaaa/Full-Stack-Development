@@ -1,0 +1,571 @@
+<%- include('partials/header') %>
+
+<main>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- Hero Content Left -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="live-dot"></span>
+                        <span class="hero-badge-text">SMART CAMPUS • CONNECT • COLLABORATE • CREATE</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Your Campus.<br>
+                        <span class="gradient-text">Your Community.</span><br>
+                        Your Events.
+                    </h1>
+
+                    <p class="hero-description">
+                        One intelligent platform to discover college events, join clubs, connect with students, and build unforgettable campus experiences.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="/events" class="btn-primary">
+                            <span>Explore Events</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="/clubs" class="btn-secondary">
+                            <span>Discover Clubs</span>
+                        </a>
+                    </div>
+
+                    <a href="/students" class="hero-trust-link">
+                        Built for modern campus communities &rarr;
+                    </a>
+                </div>
+
+                <!-- Hero Visual Right (Glassmorphic Mockup & Floating Cards) -->
+                <div class="hero-visual-container">
+                    
+                    <!-- Floating Satellite Card 1: Upcoming Event -->
+                    <div class="floating-card card-satellite-1">
+                        <div class="sat-tag">Upcoming Event</div>
+                        <div class="sat-title">TechFest 2026</div>
+                        <div class="sat-sub">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>24 OCT • 10:00 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Central Glass Dashboard Visual -->
+                    <div class="hero-main-card">
+                        <div class="card-topbar">
+                            <div class="window-controls">
+                                <span class="ctrl-red"></span>
+                                <span class="ctrl-yellow"></span>
+                                <span class="ctrl-green"></span>
+                            </div>
+                            <div class="card-search-pill">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                <span>campusly.internal/hub</span>
+                            </div>
+                        </div>
+                        <div class="card-media">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" alt="Students collaborating at an active campus innovation hub">
+                            <div class="card-media-overlay"></div>
+                            <span class="card-live-tag">&#9679; LIVE CAMPUS FEED</span>
+                        </div>
+                        <div class="card-body-content">
+                            <h3>National Hackathon &amp; Innovation Expo</h3>
+                            <p>Over 40 colleges competing for the $10,000 Grand Prize. Keynote by AI leaders.</p>
+                            <div class="card-metric-row">
+                                <div class="avatar-group">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student participant">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student participant">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student participant">
+                                    <div class="avatar-count">+480</div>
+                                </div>
+                                <span style="font-size: 0.78rem; font-weight: 700; color: var(--neon-cyan);">Auditorium Hall A</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Satellite Card 2: Club Spotlight -->
+                    <div class="floating-card card-satellite-2">
+                        <div class="sat-club-flex">
+                            <div class="sat-club-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="sat-tag">Club Spotlight</div>
+                                <div class="sat-title">AI &amp; Robotics Club</div>
+                                <div style="font-size: 0.75rem; color: #10b981; font-weight: 600;">+128 Members This Week</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Satellite Card 3: Event Registration -->
+                    <div class="floating-card card-satellite-3">
+                        <div class="progress-header">
+                            <span class="progress-title">Event Registration</span>
+                            <span class="progress-val">87% Filled</span>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CAMPUS STATISTICS STRIP (Calculated Server-Side from Database)
+         ========================================================================== -->
+    <section class="stats-section" aria-label="Campus Statistics">
+        <div class="container">
+            <div class="stats-glass-strip">
+                <div class="stat-item">
+                    <div class="stat-number gradient-text"><%= stats.totalClubs %>+</div>
+                    <div class="stat-label">Active Clubs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text"><%= stats.totalEvents %>+</div>
+                    <div class="stat-label">Annual Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text"><%= typeof stats.totalStudents === 'number' && stats.totalStudents > 1000 ? Math.floor(stats.totalStudents/1000) + 'K+' : stats.totalStudents + '+' %></div>
+                    <div class="stat-label">Student Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gradient-text"><%= stats.engagementRate %></div>
+                    <div class="stat-label">Student Engagement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURES SECTION
+         ========================================================================== -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campus Ecosystem</span>
+                <h2 class="section-title">Everything Campus Life, In One Place</h2>
+                <p class="section-subtitle">
+                    From discovering events to joining communities, make every campus moment count.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Event Discovery</h3>
+                    <p>Find technical, cultural, sports and academic events happening across campus.</p>
+                    <a href="/events" class="feature-link">
+                        Explore Discoveries &rarr;
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Club Management</h3>
+                    <p>Discover student clubs, communities and organizations that match your interests.</p>
+                    <a href="/clubs" class="feature-link">
+                        Browse Clubs &rarr;
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-cyan">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3>Smart Registration</h3>
+                    <p>Register for events quickly and keep track of everything in one place.</p>
+                    <a href="/register" class="feature-link">
+                        Instant Access &rarr;
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-pink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Student Community</h3>
+                    <p>Connect with students who share your interests, goals and passions.</p>
+                    <a href="/students" class="feature-link">
+                        Meet Members &rarr;
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-amber">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+                    <h3>Event Notifications</h3>
+                    <p>Stay updated about upcoming events, registrations and important announcements.</p>
+                    <a href="/events" class="feature-link">
+                        Never Miss Out &rarr;
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper icon-emerald">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Campus Analytics</h3>
+                    <p>Understand participation and engagement through meaningful campus insights.</p>
+                    <a href="/#about" class="feature-link">
+                        View Insights &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         UPCOMING EVENTS SECTION (Dynamic Server-Side Rendered from Database)
+         ========================================================================== -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campus Calendar</span>
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">
+                    Live events loaded dynamically from the Events Database &amp; REST API.
+                </p>
+            </div>
+
+            <div class="events-grid">
+                <% if (upcomingEvents && upcomingEvents.length > 0) { %>
+                    <% upcomingEvents.forEach(event => { %>
+                        <% 
+                           let badgeClass = 'badge-tech';
+                           if (event.category.toLowerCase().includes('cultur')) badgeClass = 'badge-cultural';
+                           else if (event.category.toLowerCase().includes('sport')) badgeClass = 'badge-sports';
+                           else if (event.category.toLowerCase().includes('acad')) badgeClass = 'badge-academic';
+                           
+                           // Extract date parts
+                           let day = '24';
+                           let month = 'OCT';
+                           if (event.date) {
+                               const parts = event.date.split('-');
+                               if (parts.length === 3) {
+                                   day = parts[2];
+                                   const mIdx = parseInt(parts[1], 10) - 1;
+                                   const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+                                   month = months[mIdx] || 'OCT';
+                               }
+                           }
+                        %>
+                        <article class="event-card">
+                            <div class="event-thumbnail-wrap">
+                                <img class="event-thumbnail" src="<%= event.image %>" alt="<%= event.title %>">
+                                <div class="event-overlay"></div>
+                                <span class="event-badge <%= badgeClass %>"><%= event.category %></span>
+                                <div class="event-date-pill">
+                                    <div class="day"><%= day %></div>
+                                    <div class="month"><%= month %></div>
+                                </div>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-meta-info">
+                                    <span>&#128205; <%= event.venue %></span>
+                                    <span>&#128101; <%= event.registeredCount %> Registered</span>
+                                </div>
+                                <h3><%= event.title %></h3>
+                                <p><%= event.description %></p>
+                                <div class="event-footer">
+                                    <span style="font-size: 0.8rem; color: #10b981; font-weight: 600;"><%= event.time %></span>
+                                    <a href="/events/<%= event.eventId %>" class="event-action-link">
+                                        <span>View Event</span>
+                                        <span>&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    <% }) %>
+                <% } else { %>
+                    <p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted);">No upcoming events currently scheduled.</p>
+                <% } %>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/events" class="btn-secondary">
+                    <span>View All Campus Events &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CLUBS SECTION (Dynamic Server-Side Rendered from Database)
+         ========================================================================== -->
+    <section class="clubs-section" id="clubs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Student Organizations</span>
+                <h2 class="section-title">Find Your People</h2>
+                <p class="section-subtitle">
+                    Join communities that turn shared interests into meaningful experiences.
+                </p>
+            </div>
+
+            <div class="clubs-grid">
+                <% if (featuredClubs && featuredClubs.length > 0) { %>
+                    <% featuredClubs.forEach(club => { %>
+                        <div class="club-card">
+                            <div class="club-image-wrap">
+                                <img class="club-image" src="<%= club.image %>" alt="<%= club.name %>">
+                                <div class="club-overlay"></div>
+                                <span class="club-badge"><%= club.category %></span>
+                            </div>
+                            <div class="club-body">
+                                <h3><%= club.name %></h3>
+                                <p><%= club.description %></p>
+                                <div class="club-footer">
+                                    <span class="member-count">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#8b5cf6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                                        <%= club.members %>+ Members
+                                    </span>
+                                    <a href="/clubs/<%= club.clubId %>" class="club-link">
+                                        <span>Explore Club &rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/clubs" class="btn-secondary">
+                    <span>Explore All Clubs &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         COMMUNITY SECTION (SPLIT LAYOUT)
+         ========================================================================== -->
+    <section class="community-section" id="community">
+        <div class="container">
+            <div class="community-grid">
+                
+                <div class="community-visual">
+                    <div class="community-image-frame">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="University students collaborating on campus">
+                    </div>
+                </div>
+
+                <div class="community-content">
+                    <span class="section-tag">Peer Networking</span>
+                    <h2 class="section-title">Campus Life Is Better Together.</h2>
+                    <p class="section-subtitle">
+                        Discover communities, meet new people, share your ideas, and participate in experiences that go beyond the classroom.
+                    </p>
+
+                    <ul class="community-checklist">
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span><strong>Cross-Disciplinary Teams:</strong> Team up with engineers, designers, and business students for campus initiatives.</span>
+                        </li>
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span><strong>Mentorship &amp; Guidance:</strong> Connect with club alumni and seniors who have navigated internships and hackathons.</span>
+                        </li>
+                        <li>
+                            <div class="checklist-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span><strong>Shared Passion Channels:</strong> Join interest-based discussions from competitive coding to robotics research.</span>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <a href="/register" class="btn-primary">
+                            <span>Join the Community &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOW IT WORKS SECTION (TIMELINE)
+         ========================================================================== -->
+    <section class="timeline-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple Journey</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">
+                    Get plugged into your campus pulse in four intuitive, friction-free steps.
+                </p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                <div class="timeline-grid">
+                    
+                    <div class="timeline-step">
+                        <div class="step-node">01</div>
+                        <div class="step-content">
+                            <h3>Discover</h3>
+                            <p>Explore upcoming events and student clubs with smart campus filters.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-node">02</div>
+                        <div class="step-content">
+                            <h3>Connect</h3>
+                            <p>Find communities and students with shared interests, goals and passions.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-node">03</div>
+                        <div class="step-content">
+                            <h3>Participate</h3>
+                            <p>Register for events with 1-click passes and become an active member.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-node">04</div>
+                        <div class="step-content">
+                            <h3>Experience</h3>
+                            <p>Build lasting connections, unlock real skills, and make unforgettable memories.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIAL SECTION
+         ========================================================================== -->
+    <section class="testimonials-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Student Voices</span>
+                <h2 class="section-title">Loved by Students &amp; Organizers</h2>
+                <p class="section-subtitle">
+                    See how Campusly transformed the university experience for thousands of students.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card">
+                    <p style="font-style: italic; margin-bottom: 20px; color: var(--text-light);">
+                        &ldquo;Campus events used to be scattered across different groups. Now I can discover everything from one platform.&rdquo;
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;" alt="Student avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: #fff;">Priya Sharma</h4>
+                            <p style="font-size: 0.78rem; color: var(--neon-cyan);">&mdash; Student Community Member</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p style="font-style: italic; margin-bottom: 20px; color: var(--text-light);">
+                        &ldquo;I discovered the perfect club for my interests and met people I would never have connected with otherwise.&rdquo;
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;" alt="Student avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: #fff;">Alex Chen</h4>
+                            <p style="font-size: 0.78rem; color: var(--neon-cyan);">&mdash; Engineering Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p style="font-style: italic; margin-bottom: 20px; color: var(--text-light);">
+                        &ldquo;Managing event registrations has become so much easier. No more paper forms or missing attendee logs!&rdquo;
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;" alt="Student avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: #fff;">Sarah Jenkins</h4>
+                            <p style="font-size: 0.78rem; color: var(--neon-cyan);">&mdash; Student Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FINAL IMPACT CTA SECTION
+         ========================================================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2 class="cta-title">
+                        Make Every Campus Moment Count.
+                    </h2>
+                    <p class="cta-subtitle">
+                        Discover. Connect. Participate. Belong.
+                    </p>
+                    <a href="/register" class="btn-primary" style="padding: 16px 42px; font-size: 1.15rem;">
+                        <span>Explore Campus Life &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

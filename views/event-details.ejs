@@ -1,0 +1,144 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <!-- Back Navigation Link -->
+        <a href="/events" class="back-link-nav">
+            &larr; Back to Events Catalog
+        </a>
+
+        <div class="detail-split-grid">
+            
+            <!-- Main Content Card Left -->
+            <div class="detail-card-main">
+                <div class="detail-hero-media">
+                    <img src="<%= event.image %>" alt="<%= event.title %>">
+                    <div class="event-overlay"></div>
+                    <span class="event-badge badge-tech" style="top: 24px; left: 24px; font-size: 0.85rem; padding: 6px 16px;">
+                        <%= event.category %>
+                    </span>
+                    <span class="event-badge" style="top: 24px; right: 24px; background: rgba(10, 13, 32, 0.85); border: 1px solid rgba(255,255,255,0.2); font-size: 0.85rem; padding: 6px 16px;">
+                        Event ID: <%= event.eventId %>
+                    </span>
+                </div>
+
+                <div class="detail-body">
+                    <h1 class="detail-title"><%= event.title %></h1>
+                    <p class="detail-desc"><%= event.description %></p>
+
+                    <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: #fff;">Event Highlights &amp; Logistics</h3>
+                    <p style="color: var(--text-body); line-height: 1.6; margin-bottom: 24px;">
+                        Join fellow students, mentors, and club organizers for this premier campus event. Participants receive certificates of participation and entry to competitive brackets. All students must register in advance to reserve their seating pass.
+                    </p>
+
+                    <div style="padding: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md);">
+                        <h4 style="color: var(--neon-cyan); margin-bottom: 6px;">Important Student Guidelines</h4>
+                        <p style="font-size: 0.88rem; color: var(--text-body);">
+                            Please bring your college student ID card for verification at the entrance. Seating is allocated on a first-come, first-served basis for confirmed registrants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Specifications Right -->
+            <aside class="sidebar-glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.25rem;">Event Information</h3>
+                    <span style="font-size: 0.75rem; color: #10b981; font-weight: 700; background: rgba(16, 185, 129, 0.15); padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <%= event.status %>
+                    </span>
+                </div>
+
+                <div class="meta-spec-list">
+                    <!-- Date -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Date</div>
+                            <div class="spec-value"><%= event.date %></div>
+                        </div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Time</div>
+                            <div class="spec-value"><%= event.time %></div>
+                        </div>
+                    </div>
+
+                    <!-- Venue -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Venue</div>
+                            <div class="spec-value"><%= event.venue %></div>
+                        </div>
+                    </div>
+
+                    <!-- Organizer -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Organizer</div>
+                            <div class="spec-value"><%= event.organizer %></div>
+                        </div>
+                    </div>
+
+                    <!-- Capacity & Available Seats -->
+                    <div class="meta-spec-item">
+                        <div class="spec-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                            <div class="spec-label">Seats &amp; Registered</div>
+                            <div class="spec-value"><%= event.registeredCount %> Registered (<%= availableSeats %> seats left)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maps API Integration (Pure Server-Side Link, Zero JS) -->
+                <div class="map-location-box">
+                    <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--neon-cyan); font-weight: 700; letter-spacing: 0.08em;">
+                        LOCATION &amp; CAMPUS MAP
+                    </div>
+                    <div style="font-weight: 700; color: #fff; font-size: 0.95rem;">
+                        <%= event.venue %>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-body);">
+                        <%= event.address %>
+                    </div>
+                    <a href="<%= event.mapUrl %>" target="_blank" rel="noopener noreferrer" class="map-btn-link">
+                        <span>View Location on Google Maps</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Registration CTA Button -->
+                <% if (availableSeats > 0) { %>
+                    <a href="/register?eventId=<%= event.eventId %>" class="btn-primary" style="width: 100%; text-align: center;">
+                        <span>Register for Event &rarr;</span>
+                    </a>
+                <% } else { %>
+                    <button class="btn-secondary" style="width: 100%; opacity: 0.6; cursor: not-allowed;" disabled>
+                        Event Full (Waitlist Only)
+                    </button>
+                <% } %>
+            </aside>
+
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

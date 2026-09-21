@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+            <span class="section-tag">Student Network</span>
+            <h1 class="section-title">Student Community Directory</h1>
+            <p class="section-subtitle">
+                Connect with peers across departments, find project teammates, and collaborate.
+            </p>
+        </div>
+
+        <!-- Students Grid -->
+        <div class="students-grid">
+            <% if (students && students.length > 0) { %>
+                <% students.forEach(student => { %>
+                    <div class="student-card">
+                        <img class="student-avatar-lg" src="<%= student.profileImage %>" alt="<%= student.name %>">
+                        <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 4px;"><%= student.name %></h3>
+                        <p style="font-size: 0.8rem; color: var(--neon-cyan); font-weight: 600; margin-bottom: 2px;">
+                            <%= student.department %>
+                        </p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px;">
+                            Year <%= student.year %> • Section <%= student.section %>
+                        </p>
+
+                        <div class="tag-cloud">
+                            <% if (student.interests && student.interests.length > 0) { %>
+                                <% student.interests.forEach(interest => { %>
+                                    <span class="interest-tag"><%= interest %></span>
+                                <% }) %>
+                            <% } %>
+                        </div>
+
+                        <div style="margin-top: 20px; width: 100%; border-top: 1px solid var(--border-glass); padding-top: 14px;">
+                            <a href="mailto:<%= student.email %>" style="font-size: 0.82rem; color: var(--electric-blue); font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Connect via Email
+                            </a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                    <h3>No students listed</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Students will appear here as they register for campus events!</p>
+                </div>
+            <% } %>
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

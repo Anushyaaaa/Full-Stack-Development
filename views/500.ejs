@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<main class="error-page-container">
+    <div class="error-card">
+        <div class="error-code gradient-text" style="background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">500</div>
+        <h1 style="font-size: 1.8rem; margin-bottom: 12px; color: #fff;">Server Encountered an Error</h1>
+        <p style="color: var(--text-body); line-height: 1.6; margin-bottom: 28px;">
+            <%= typeof message !== 'undefined' ? message : "Something went wrong on our campus servers while processing your request. Please try again in a few moments." %>
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="/" class="btn-primary">
+                <span>Back to Safety</span>
+            </a>
+            <a href="/events" class="btn-secondary">
+                <span>View Events</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

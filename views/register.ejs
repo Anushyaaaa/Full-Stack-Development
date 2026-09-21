@@ -1,0 +1,119 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <div class="form-container-card">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="section-tag">Instant Pass</span>
+                <h1 style="font-size: 2.2rem; margin-bottom: 8px;">Event Registration</h1>
+                <p style="color: var(--text-body); font-size: 0.95rem;">
+                    Reserve your official seat and student entry pass for upcoming campus events.
+                </p>
+            </div>
+
+            <!-- Server-Rendered Error Message Banner (Zero Client JS) -->
+            <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+                <div class="error-alert-banner" role="alert">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div>
+                        <strong>Notice:</strong> <%= errorMessage %>
+                    </div>
+                </div>
+            <% } %>
+
+            <!-- Pure HTML5 Form (POST /register, Zero Frontend JS) -->
+            <form method="POST" action="/register">
+                
+                <!-- Student ID -->
+                <div class="form-group">
+                    <label for="studentId" class="form-label">
+                        <span>Student ID</span>
+                        <span style="color: var(--neon-cyan); font-size: 0.75rem;">e.g. STU001</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="studentId" 
+                        name="studentId" 
+                        class="form-input" 
+                        placeholder="Enter your college Student ID" 
+                        value="<%= (typeof formData !== 'undefined' && formData.studentId) ? formData.studentId : '' %>"
+                        required 
+                    >
+                </div>
+
+                <!-- Student Full Name -->
+                <div class="form-group">
+                    <label for="studentName" class="form-label">
+                        <span>Full Name</span>
+                        <span style="color: var(--text-muted); font-size: 0.75rem;">Official name</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="studentName" 
+                        name="studentName" 
+                        class="form-input" 
+                        placeholder="Enter your full name" 
+                        value="<%= (typeof formData !== 'undefined' && formData.studentName) ? formData.studentName : '' %>"
+                        required 
+                    >
+                </div>
+
+                <!-- Student Email -->
+                <div class="form-group">
+                    <label for="studentEmail" class="form-label">
+                        <span>College Email</span>
+                        <span style="color: var(--text-muted); font-size: 0.75rem;">For pass confirmation</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="studentEmail" 
+                        name="studentEmail" 
+                        class="form-input" 
+                        placeholder="yourname@college.edu" 
+                        value="<%= (typeof formData !== 'undefined' && formData.studentEmail) ? formData.studentEmail : '' %>"
+                        required 
+                    >
+                </div>
+
+                <!-- Select Event Dropdown -->
+                <div class="form-group">
+                    <label for="eventId" class="form-label">
+                        <span>Select Event</span>
+                        <span style="color: var(--text-muted); font-size: 0.75rem;">Available events</span>
+                    </label>
+                    <select id="eventId" name="eventId" class="form-select" required>
+                        <option value="">-- Choose an Event --</option>
+                        <% if (events && events.length > 0) { %>
+                            <% events.forEach(evt => { %>
+                                <% 
+                                   const isSelected = (typeof preselectedEventId !== 'undefined' && preselectedEventId === evt.eventId) || 
+                                                      (typeof formData !== 'undefined' && formData.eventId === evt.eventId);
+                                   const isFull = evt.registeredCount >= evt.capacity;
+                                %>
+                                <option value="<%= evt.eventId %>" <%= isSelected ? 'selected' : '' %> <%= isFull ? 'disabled' : '' %>>
+                                    <%= evt.title %> (<%= evt.date %> • <%= evt.venue %>) <%= isFull ? '[FULL]' : `[${evt.capacity - evt.registeredCount} seats left]` %>
+                                </option>
+                            <% }) %>
+                        <% } %>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div style="margin-top: 32px;">
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                        <span>Register for Event &rarr;</span>
+                    </button>
+                </div>
+
+                <div style="text-align: center; margin-top: 18px; font-size: 0.8rem; color: var(--text-muted);">
+                    Duplicate registrations for the same student ID and event are automatically prevented.
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>

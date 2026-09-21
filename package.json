@@ -1,0 +1,30 @@
+{
+  "name": "college-event-club-platform",
+  "version": "1.0.0",
+  "description": "College Event & Club Management Platform (Campusly) - Full-Stack Express, EJS & MongoDB Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "college",
+    "events",
+    "clubs",
+    "management",
+    "express",
+    "ejs",
+    "mongodb",
+    "vanilla-css",
+    "no-frontend-javascript"
+  ],
+  "author": "Anushya C",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  }
+}

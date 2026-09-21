@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campusly - The next-generation college event and club management platform. Discover campus events, join student communities, and build unforgettable memories.">
+    <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Campusly — College Event & Club Management Platform' %></title>
+
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Unified Pure CSS3 Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- SVG DEFS FOR GRADIENTS -->
+    <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+        <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="50%" stop-color="#818cf8"/>
+                <stop offset="100%" stop-color="#c084fc"/>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- AMBIENT BACKGROUND SYSTEM (Pure CSS) -->
+    <div class="ambient-canvas" aria-hidden="true">
+        <div class="cyber-grid"></div>
+        <div class="ambient-blob blob-1"></div>
+        <div class="ambient-blob blob-2"></div>
+        <div class="ambient-blob blob-3"></div>
+        <div class="glowing-dot dot-1"></div>
+        <div class="glowing-dot dot-2"></div>
+        <div class="glowing-dot dot-3"></div>
+        <div class="glowing-dot dot-4"></div>
+    </div>
+
+    <!-- PURE CSS MOBILE TOGGLE CONTROLLER (Zero JavaScript) -->
+    <input type="checkbox" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+
+    <!-- FLOATING STICKY NAVIGATION BAR -->
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-logo" title="Campusly Homepage">
+                <div class="logo-symbol">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+                <div class="brand-meta">
+                    <span class="brand-title">CAMPUSLY</span>
+                    <span class="brand-subtitle">College Event &amp; Club Platform</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link <%= (typeof activeNav !== 'undefined' && activeNav === 'home') ? 'active' : '' %>">Home</a></li>
+                <li><a href="/events" class="nav-link <%= (typeof activeNav !== 'undefined' && activeNav === 'events') ? 'active' : '' %>">Events</a></li>
+                <li><a href="/clubs" class="nav-link <%= (typeof activeNav !== 'undefined' && activeNav === 'clubs') ? 'active' : '' %>">Clubs</a></li>
+                <li><a href="/students" class="nav-link <%= (typeof activeNav !== 'undefined' && activeNav === 'students') ? 'active' : '' %>">Students</a></li>
+                <li><a href="/#about" class="nav-link">About</a></li>
+            </ul>
+
+            <!-- Nav Actions & Mobile Button -->
+            <div class="nav-actions">
+                <a href="/events" class="btn-secondary" style="padding: 9px 18px; font-size: 0.85rem;">
+                    <span>Explore Events</span>
+                </a>
+                <a href="/register" class="btn-primary" style="padding: 9px 20px; font-size: 0.85rem;">
+                    <span>Register Now</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+
+                <!-- Pure CSS Hamburger Trigger -->
+                <label for="mobile-nav-toggle" class="hamburger-btn" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>

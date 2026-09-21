@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<main class="detail-page-container">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+            <span class="section-tag">Student Communities</span>
+            <h1 class="section-title">Discover Campus Clubs</h1>
+            <p class="section-subtitle">
+                Find organizations matching your technical, cultural, and leadership passions.
+            </p>
+        </div>
+
+        <!-- Clubs Grid -->
+        <div class="clubs-grid">
+            <% if (clubs && clubs.length > 0) { %>
+                <% clubs.forEach(club => { %>
+                    <div class="club-card">
+                        <div class="club-image-wrap">
+                            <img class="club-image" src="<%= club.image %>" alt="<%= club.name %>">
+                            <div class="club-overlay"></div>
+                            <span class="club-badge"><%= club.category %></span>
+                        </div>
+                        <div class="club-body">
+                            <h3><%= club.name %></h3>
+                            <p><%= club.description %></p>
+                            <div class="club-footer">
+                                <span class="member-count">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#8b5cf6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                                    <%= club.members %>+ Members
+                                </span>
+                                <a href="/clubs/<%= club.clubId %>" class="club-link">
+                                    <span>Explore Club &rarr;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                    <h3>No clubs found</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Check back later as new student communities are being registered!</p>
+                </div>
+            <% } %>
+        </div>
+
+    </div>
+</main>
+
+<%- include('partials/footer') %>
