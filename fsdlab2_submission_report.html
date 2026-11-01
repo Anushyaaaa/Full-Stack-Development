@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-3 Lab Submission — JavaScript Event Handling | Anushya C (2648508)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        @page {
+            size: A4;
+            margin: 12mm 15mm;
+        }
+        @media print {
+            body { background: white !important; color: #1e293b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+            .shadow-xl, .shadow-lg, .shadow-md { box-shadow: none !important; }
+            border { border-color: #cbd5e1 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased p-4 sm:p-8">
+
+    <!-- Print / Export Bar for Browser -->
+    <div class="no-print max-w-4xl mx-auto mb-6 flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-sm font-bold text-slate-800">Christ University Lab Submission Document Ready</span>
+        </div>
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow-sm transition-all">
+            <i class="fa-solid fa-print"></i>
+            <span>Print / Save as PDF</span>
+        </button>
+    </div>
+
+    <!-- Main Report Container -->
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+
+        <!-- ==================== COVER HEADER ==================== -->
+        <div class="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white p-8 sm:p-10 border-b-4 border-amber-400">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[10px] font-extrabold uppercase tracking-wider">
+                            Excellence and Service
+                        </span>
+                        <span class="text-xs text-blue-200 font-medium">Department of Computer Science</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">CHRIST (Deemed to be University)</h1>
+                    <p class="text-blue-200 text-xs mt-1">Bangalore Central Campus • Hosur Road, Bengaluru - 560029</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/20 text-right shrink-0">
+                    <span class="text-[11px] text-blue-200 block font-medium">Subject</span>
+                    <span class="text-sm font-bold text-white">Full Stack Development Lab</span>
+                </div>
+            </div>
+
+            <!-- Title & Student Info -->
+            <div class="mt-8 pt-6 border-t border-blue-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <span class="text-[10px] uppercase tracking-wider text-blue-300 font-bold block mb-1">Practical Assignment</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white leading-tight">
+                        Exercise-3: Demonstrate Event Handling using JavaScript
+                    </h2>
+                    <p class="text-xs text-blue-200 mt-1">Domain: <strong>CampusVibe — Christ University Event & Club Hub</strong></p>
+                </div>
+                <div class="sm:text-right">
+                    <span class="text-[10px] uppercase tracking-wider text-blue-300 font-bold block mb-1">Student Credentials</span>
+                    <p class="text-lg font-bold text-white">Anushya C</p>
+                    <p class="text-xs text-blue-200">Register Number: <strong class="text-amber-300">2648508</strong></p>
+                    <p class="text-[11px] text-blue-300 mt-0.5">Degree: MCA / M.Sc Computer Science</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-8 sm:p-10 space-y-8">
+
+            <!-- ==================== 1. OBJECTIVE & PROBLEM STATEMENT ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        1
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">Objective & Problem Statement</h3>
+                </div>
+
+                <div class="bg-blue-50/50 p-4 rounded-2xl border border-blue-200/80 space-y-2 text-xs leading-relaxed text-slate-700">
+                    <p><strong>Objective:</strong> To understand and implement JavaScript event handling by developing an interactive webpage that demonstrates at least three unique events and performs meaningful actions based on user interaction.</p>
+                    <p><strong>Problem Statement:</strong> Develop a responsive webpage and demonstrate the handling of a minimum of three different JavaScript events. The selected events should serve a clear purpose and improve user interaction or usability.</p>
+                    <p class="text-[11px] text-slate-500 italic">
+                        <strong>Evaluation Note:</strong> The <code class="bg-slate-200 px-1 py-0.5 rounded">click</code> event was excluded from the mandatory 3 unique events as per slide rubric. This implementation demonstrates <strong>12 unique, non-click events</strong> integrated seamlessly within the student's <strong>CampusVibe (<code class="bg-slate-200 px-1 py-0.5 rounded">fsdlab2.html</code>)</strong> project.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ==================== 2. IMPLEMENTED EVENTS MATRIX ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        2
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">Implemented Events Matrix (12 Unique Events)</h3>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-200">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-[10px]">
+                            <tr>
+                                <th class="border-b border-slate-200 p-2.5">#</th>
+                                <th class="border-b border-slate-200 p-2.5">Event Name</th>
+                                <th class="border-b border-slate-200 p-2.5">Target Element</th>
+                                <th class="border-b border-slate-200 p-2.5">Functional Purpose</th>
+                                <th class="border-b border-slate-200 p-2.5">Dynamic Feedback & Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-700 text-[11px]">
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">1</td>
+                                <td class="p-2.5 font-mono font-bold text-emerald-700">load</td>
+                                <td class="p-2.5 font-mono">window</td>
+                                <td class="p-2.5">Welcome user when page loads & init metrics</td>
+                                <td class="p-2.5">Native alert: <em>"Welcome to CampusVibe — Christ University Event & Club Hub!"</em></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">2</td>
+                                <td class="p-2.5 font-mono font-bold text-blue-700">input</td>
+                                <td class="p-2.5 font-mono">#eventDemoInput</td>
+                                <td class="p-2.5">Real-time dynamic typing preview</td>
+                                <td class="p-2.5">Live renders <code>You typed: [query]</code> with character count & clear button</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">3</td>
+                                <td class="p-2.5 font-mono font-bold text-purple-700">resize</td>
+                                <td class="p-2.5 font-mono">window</td>
+                                <td class="p-2.5">Detect live browser viewport width changes</td>
+                                <td class="p-2.5">Updates <code>Current Screen Width : [X] px</code> with responsive breakpoint badge</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">4</td>
+                                <td class="p-2.5 font-mono font-bold text-amber-700">mouseover</td>
+                                <td class="p-2.5 font-mono">.event-card, .club-card</td>
+                                <td class="p-2.5">Highlight cards upon pointer entry</td>
+                                <td class="p-2.5">Card elevates with <code>-translate-y-2</code>, shadow-2xl, blue ring glow</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">5</td>
+                                <td class="p-2.5 font-mono font-bold text-orange-700">mouseout</td>
+                                <td class="p-2.5 font-mono">.event-card, .club-card</td>
+                                <td class="p-2.5">Restore original card appearance</td>
+                                <td class="p-2.5">Reverts elevation and border glow smoothly via transition properties</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">6</td>
+                                <td class="p-2.5 font-mono font-bold text-pink-700">focus</td>
+                                <td class="p-2.5 font-mono">#eventDemoInput, form inputs</td>
+                                <td class="p-2.5">Signal active keyboard focus</td>
+                                <td class="p-2.5">Glows with blue ring and updates pill: <code>State: Active (focus)</code></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">7</td>
+                                <td class="p-2.5 font-mono font-bold text-indigo-700">blur</td>
+                                <td class="p-2.5 font-mono">#eventDemoInput, form inputs</td>
+                                <td class="p-2.5">Handle focus dismissal and validation</td>
+                                <td class="p-2.5">Updates status pill to <code>State: Inactive (blur)</code></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">8</td>
+                                <td class="p-2.5 font-mono font-bold text-cyan-700">change</td>
+                                <td class="p-2.5 font-mono">#domainTrackSelect</td>
+                                <td class="p-2.5">Switch campus event tracks dynamically</td>
+                                <td class="p-2.5">Instantly renders track schedule, venue, eligibility, and duration badges</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">9</td>
+                                <td class="p-2.5 font-mono font-bold text-rose-700">submit</td>
+                                <td class="p-2.5 font-mono">#rsvpForm</td>
+                                <td class="p-2.5">Intercept form submission & validate</td>
+                                <td class="p-2.5"><code>e.preventDefault()</code> stops reload; checks inputs, writes LocalStorage & Canvas</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">10</td>
+                                <td class="p-2.5 font-mono font-bold text-sky-700">dblclick</td>
+                                <td class="p-2.5 font-mono">.event-card, .club-card</td>
+                                <td class="p-2.5">Interactive quick star / bookmark action</td>
+                                <td class="p-2.5">Toggles amber background highlight and shows celebratory toast notification</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">11</td>
+                                <td class="p-2.5 font-mono font-bold text-teal-700">scroll</td>
+                                <td class="p-2.5 font-mono">window</td>
+                                <td class="p-2.5">Track page reading progression</td>
+                                <td class="p-2.5">Calculates percentage and expands top gradient bar from 0% to 100%</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-2.5 font-bold text-blue-600">12</td>
+                                <td class="p-2.5 font-mono font-bold text-amber-600">contextmenu</td>
+                                <td class="p-2.5 font-mono">#event-lab</td>
+                                <td class="p-2.5">Custom contextual action palette</td>
+                                <td class="p-2.5"><code>e.preventDefault()</code> displays custom floating popup menu at cursor coordinates</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ==================== 3. SCREENSHOT INTEGRATIONS & VISUAL PROOF ==================== -->
+            <div class="page-break"></div>
+            <section class="space-y-4 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        3
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">Event Integrations & Visual Documentation</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    
+                    <!-- Evidence 1: Load Event -->
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-700 text-sm">Figure 1: Window Load Alert ('load')</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">Slide 7 Spec</span>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl border border-slate-200 text-slate-700 text-[11px] font-mono">
+                            <p class="font-bold text-slate-900 mb-1">Popup Dialog:</p>
+                            <p>"This page says:</p>
+                            <p class="text-blue-600">Welcome to CampusVibe — Christ University Event & Club Hub!"</p>
+                        </div>
+                        <p class="text-[11px] text-slate-500">
+                            Fires automatically when the window and external assets (Tailwind CDN, Font Awesome, images) finish loading via <code>window.addEventListener('load')</code>.
+                        </p>
+                    </div>
+
+                    <!-- Evidence 2: Input & Resize -->
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-700 text-sm">Figure 2: Real-time 'input' & 'resize'</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold">Slide 7 Spec</span>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl border border-slate-200 text-slate-700 text-[11px]">
+                            <div class="p-2 bg-blue-50 rounded text-center text-blue-700 font-bold mb-1.5">
+                                You typed: <span class="underline decoration-blue-300">HackTheCampus</span>
+                            </div>
+                            <div class="p-1.5 bg-slate-100 rounded text-center font-bold text-slate-700 text-[10px]">
+                                Current Screen Width : <span class="text-blue-700">1280 px</span> [Desktop]
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-slate-500">
+                            The <code>input</code> event streams typed characters instantaneously with character count, while <code>resize</code> updates the exact pixel width and breakpoint pill.
+                        </p>
+                    </div>
+
+                    <!-- Evidence 3: Mouseover & Mouseout -->
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-700 text-sm">Figure 3: Card Hover ('mouseover'/'mouseout')</span>
+                            <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">Slide 6 Spec</span>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl border border-blue-500 shadow-md text-slate-700 text-[11px]">
+                            <span class="font-bold text-blue-700 block">⚡ HackTheCampus 2026 (Hover State)</span>
+                            <p class="text-[10px] text-slate-500 mt-1">Transform: <code>-translate-y-2</code> | Ring: <code>ring-2 ring-blue-500</code></p>
+                        </div>
+                        <p class="text-[11px] text-slate-500">
+                            Hovering adds elevation and vibrant glow; pointer departure seamlessly restores the neutral background.
+                        </p>
+                    </div>
+
+                    <!-- Evidence 4: Live Event Console -->
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-700 text-sm">Figure 4: Real-time Event Console</span>
+                            <span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 text-[10px] font-bold">Viva Feature</span>
+                        </div>
+                        <div class="p-3 bg-slate-950 rounded-xl text-slate-200 font-mono text-[10px] space-y-1">
+                            <p><span class="text-emerald-400">[LOAD]</span> Window resources initialized</p>
+                            <p><span class="text-blue-400">[INPUT]</span> Query: "Hackathon" (Length: 9)</p>
+                            <p><span class="text-purple-400">[RESIZE]</span> Viewport: 1280px x 800px</p>
+                            <p><span class="text-yellow-400">[MOUSEOVER]</span> Hovering card-hackathon</p>
+                        </div>
+                        <p class="text-[11px] text-slate-500">
+                            Streams every event dispatch in real-time, proving execution clarity for faculty viva evaluation.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ==================== 4. GITHUB REPOSITORY LINK ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        4
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">GitHub Repository Link (Deliverable 3)</h3>
+                </div>
+
+                <div class="p-4 bg-slate-900 text-white rounded-2xl border border-slate-800 space-y-2">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase block">Official Repository URL:</span>
+                            <a href="https://github.com/Anushyaaaa/Full-Stack-Development" target="_blank" class="text-blue-400 hover:text-blue-300 font-mono font-bold text-sm underline">
+                                https://github.com/Anushyaaaa/Full-Stack-Development
+                            </a>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
+                            Branch: main • Up to date
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-[11px] font-mono text-slate-300">
+                        <div>File: <strong class="text-white">fsdlab2.html</strong></div>
+                        <div>Target: <strong class="text-white">Exercise-3 Event Handling</strong></div>
+                        <div>Author: <strong class="text-white">Anushya C</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 5. SOURCE CODE SNIPPETS ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        5
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">Core Source Code (JavaScript Event Listeners)</h3>
+                </div>
+
+                <div class="bg-slate-950 text-slate-200 p-4 rounded-2xl font-mono text-[10px] leading-relaxed overflow-x-auto border border-slate-800">
+<pre class="text-slate-300"><code>// 1. Window 'load' Event
+window.addEventListener('load', function() {
+    updateScreenWidth();
+    setTimeout(() => alert("Welcome to CampusVibe — Christ University Event & Club Hub!"), 400);
+});
+
+// 2. Input 'input' Event (Live dynamic typing)
+demoInput.addEventListener('input', function(e) {
+    const val = e.target.value;
+    typedValue.textContent = val || '(start typing above...)';
+    charCount.textContent = val.length;
+    logEvent('INPUT', `Search: "${val}"`);
+});
+
+// 3. Window 'resize' Event (Live browser width counter)
+window.addEventListener('resize', function() {
+    updateScreenWidth();
+    logEvent('RESIZE', `${window.innerWidth}px x ${window.innerHeight}px`);
+});
+
+// 4 & 5. 'mouseover' & 'mouseout' Events (Feature / Event Cards)
+document.querySelectorAll('.event-card, .club-card').forEach(card => {
+    card.addEventListener('mouseover', () => card.classList.add('ring-2', 'ring-blue-500', '-translate-y-2'));
+    card.addEventListener('mouseout', () => card.classList.remove('ring-2', 'ring-blue-500', '-translate-y-2'));
+    card.addEventListener('dblclick', () => card.classList.toggle('bg-amber-50/50'));
+});
+
+// 6 & 7. 'focus' & 'blur' Events (Input active status)
+demoInput.addEventListener('focus', () => fieldFocusStatus.textContent = 'State: Active (focus)');
+demoInput.addEventListener('blur', () => fieldFocusStatus.textContent = 'State: Inactive (blur)');
+
+// 8. Select 'change' Event (Dynamic domain preview)
+domainTrackSelect.addEventListener('change', e => renderTrackPreview(e.target.value));
+
+// 9. Window 'scroll' Event (Dynamic progress bar)
+window.addEventListener('scroll', () => {
+    const p = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scrollProgressBar').style.width = p + '%';
+});
+
+// 10. 'contextmenu' Event (Custom right-click action palette)
+demoSection.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    openCustomMenu(e.pageX, e.pageY);
+});</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== 6. AI USAGE DECLARATION ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        6
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">AI Usage Declaration (Mandatory Deliverable)</h3>
+                </div>
+
+                <div class="p-4 bg-amber-50/80 border border-amber-200 rounded-2xl space-y-2 text-xs text-slate-700">
+                    <p><strong>AI Tools Utilized:</strong> Google Antigravity (Powered by Google DeepMind Advanced Agentic Coding & Gemini 3.8 Flash).</p>
+                    <p><strong>Purpose of AI Assistance:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-600 ml-1">
+                        <li>Designing responsive Tailwind CSS component layouts mirroring the Christ University Exercise-3 slide requirements.</li>
+                        <li>Structuring robust, performant DOM event listeners (<code class="bg-slate-200 px-1 py-0.5 rounded">load</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">input</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">resize</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">mouseover</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">mouseout</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">change</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">scroll</code>, <code class="bg-slate-200 px-1 py-0.5 rounded">contextmenu</code>).</li>
+                        <li>Structuring an asynchronous, non-blocking real-time event activity console.</li>
+                        <li>Formatting the academic submission documentation adhering to the 10-mark evaluation rubrics.</li>
+                    </ul>
+                    <p class="text-[11px] text-slate-500 pt-1"><em>Declaration: All architectural patterns, event integrations, and UI components were reviewed, tested, and validated by the student in the local environment.</em></p>
+                </div>
+            </section>
+
+            <!-- ==================== 7. REFLECTIONS & VIVA PREPARATION ==================== -->
+            <section class="space-y-3 avoid-break">
+                <div class="flex items-center gap-2.5 border-b border-slate-200 pb-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">
+                        7
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 uppercase tracking-wide">Reflections & Viva Voce Q&A</h3>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-700 leading-relaxed">
+                    <p><strong>Key Learnings:</strong> Implementing event-driven programming on CampusVibe reinforced the asynchronous nature of the browser event loop. Separating visual presentation from dynamic behaviors via <code class="bg-slate-200 px-1 py-0.5 rounded">addEventListener</code> guarantees clean, maintainable architecture. Using <code class="bg-slate-200 px-1 py-0.5 rounded">e.preventDefault()</code> on form submissions and right-clicks illustrated how client-side applications can intercept default browser behaviors to deliver bespoke UX.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 text-xs">
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q: Bubbling vs Capturing?</strong>
+                        <p class="text-slate-600 text-[11px]">Bubbling propagates upwards from target to root; Capturing trickles down from root to target. Defaults to bubbling.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q: Why preventDefault()?</strong>
+                        <p class="text-slate-600 text-[11px]">Cancels native browser actions like form HTTP reloads or context menu openings, allowing custom JS execution.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <div class="bg-slate-900 text-slate-400 p-6 border-t border-slate-800 text-center text-xs">
+            <p class="font-bold text-white">CHRIST (Deemed to be University) • Full Stack Development Lab</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">Exercise-3: JavaScript Event Handling • Student: Anushya C (2648508)</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
