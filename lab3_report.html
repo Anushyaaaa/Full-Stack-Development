@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report — Exercise 3: JavaScript Event Handling | Anushya C (2648508)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .shadow-lg, .shadow-md, .shadow-sm { box-shadow: none !important; }
+            border { border-color: #cbd5e1 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased p-4 sm:p-8">
+
+    <!-- Print / Export Floating Action Bar -->
+    <div class="no-print max-w-4xl mx-auto mb-6 flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+            <span class="text-sm font-semibold text-slate-700">Lab 3 Submission Document Ready</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2 shadow-sm transition-all">
+                <i class="fa-solid fa-print"></i>
+                <span>Print / Save as PDF</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Report Document Container -->
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+
+        <!-- University Header Banner -->
+        <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white p-8 border-b-4 border-amber-400">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">CHRIST (Deemed to be University)</h1>
+                    <p class="text-blue-200 text-sm font-medium mt-1">Department of Computer Science • Bangalore, India</p>
+                    <p class="text-amber-300 text-xs font-semibold uppercase tracking-wider mt-1">Excellence and Service</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/20 text-right">
+                    <span class="text-xs text-blue-200 block font-medium">Course</span>
+                    <span class="text-sm font-bold text-white">Full Stack Development Lab</span>
+                </div>
+            </div>
+
+            <!-- Title & Student Info -->
+            <div class="mt-8 pt-6 border-t border-blue-700/60 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-blue-300 font-bold block">Assignment Title</span>
+                    <h2 class="text-xl font-bold text-white">Exercise-3: Demonstrate Event Handling using JavaScript</h2>
+                </div>
+                <div class="sm:text-right">
+                    <span class="text-xs uppercase tracking-wider text-blue-300 font-bold block">Student Details</span>
+                    <p class="text-base font-bold text-white">Anushya C</p>
+                    <p class="text-xs text-blue-200">Register No: <strong>2648508</strong> • Academic Year 2026-2027</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-8 space-y-8">
+
+            <!-- 1. Objective & Problem Statement -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-bullseye text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">1. Objective & Problem Statement</h3>
+                </div>
+                
+                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-200/60 space-y-2 text-sm text-slate-700 leading-relaxed">
+                    <p><strong>Objective:</strong> To understand and implement JavaScript event handling by developing an interactive webpage that demonstrates at least three unique events and performs meaningful actions based on user interaction.</p>
+                    <p><strong>Problem Statement:</strong> Develop a responsive webpage and demonstrate the handling of a minimum of three different JavaScript events. The selected events should serve a clear purpose and improve user interaction or usability.</p>
+                    <p class="text-xs text-slate-500 italic"><strong>Note:</strong> The click event may be used, but since it has already been utilized extensively in previous exercises, it will not be considered as one of the three mandatory unique events for evaluation. Students are encouraged to choose events that are relevant to their selected domain/project.</p>
+                </div>
+            </section>
+
+            <!-- 2. Implemented JavaScript Events Matrix -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-table-list text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">2. Implemented JavaScript Events (Exceeds Minimum 3 Events)</h3>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse border border-slate-200">
+                        <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-[11px]">
+                            <tr>
+                                <th class="border border-slate-200 px-3 py-2.5">#</th>
+                                <th class="border border-slate-200 px-3 py-2.5">Event Name</th>
+                                <th class="border border-slate-200 px-3 py-2.5">Target Element</th>
+                                <th class="border border-slate-200 px-3 py-2.5">Functional Purpose</th>
+                                <th class="border border-slate-200 px-3 py-2.5">Output / Feedback Mechanism</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">1</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-emerald-700">load</td>
+                                <td class="border border-slate-200 px-3 py-2">window</td>
+                                <td class="border border-slate-200 px-3 py-2">Welcome user when page loads & initialize viewport metrics</td>
+                                <td class="border border-slate-200 px-3 py-2">Displays native alert <code class="bg-slate-100 px-1 py-0.5 rounded">"Welcome to TechLearn Academy"</code> & initial width</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">2</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-blue-700">input</td>
+                                <td class="border border-slate-200 px-3 py-2">&lt;input id="eventDemoInput"&gt;</td>
+                                <td class="border border-slate-200 px-3 py-2">Display typed text dynamically in real time</td>
+                                <td class="border border-slate-200 px-3 py-2">Updates <code class="bg-slate-100 px-1 py-0.5 rounded">You typed: [Value]</code> with character counter & clear icon</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">3</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-purple-700">resize</td>
+                                <td class="border border-slate-200 px-3 py-2">window</td>
+                                <td class="border border-slate-200 px-3 py-2">Detect live browser viewport width changes</td>
+                                <td class="border border-slate-200 px-3 py-2">Updates <code class="bg-slate-100 px-1 py-0.5 rounded">Current Screen Width : [X] px</code> and breakpoint badge (Mobile/Tablet/Desktop)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">4</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-amber-700">mouseover</td>
+                                <td class="border border-slate-200 px-3 py-2">.feature-card</td>
+                                <td class="border border-slate-200 px-3 py-2">Highlight feature card on mouse hover</td>
+                                <td class="border border-slate-200 px-3 py-2">Card elevates with -translate-y-2, shadow-xl, blue border, pulsing status dot</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">5</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-orange-700">mouseout</td>
+                                <td class="border border-slate-200 px-3 py-2">.feature-card</td>
+                                <td class="border border-slate-200 px-3 py-2">Restore original card appearance on cursor departure</td>
+                                <td class="border border-slate-200 px-3 py-2">Reverts styling smoothly to neutral gray card state</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">6</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-pink-700">focus</td>
+                                <td class="border border-slate-200 px-3 py-2">Form input fields</td>
+                                <td class="border border-slate-200 px-3 py-2">Indicate active typing focus context</td>
+                                <td class="border border-slate-200 px-3 py-2">Glows with blue ring and updates status pill: "State: Active (focus)"</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">7</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-indigo-700">blur</td>
+                                <td class="border border-slate-200 px-3 py-2">Form input fields</td>
+                                <td class="border border-slate-200 px-3 py-2">Validate and revert styling on loss of focus</td>
+                                <td class="border border-slate-200 px-3 py-2">Updates status pill: "State: Inactive (blur)"</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">8</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-cyan-700">change</td>
+                                <td class="border border-slate-200 px-3 py-2">&lt;select id="courseSelect"&gt;</td>
+                                <td class="border border-slate-200 px-3 py-2">Dynamically switch curriculum details on track change</td>
+                                <td class="border border-slate-200 px-3 py-2">Updates course title, syllabus badge, duration, and learning modules</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">9</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-rose-700">submit</td>
+                                <td class="border border-slate-200 px-3 py-2">&lt;form id="enrollmentForm"&gt;</td>
+                                <td class="border border-slate-200 px-3 py-2">Validate mandatory inputs and intercept form submit</td>
+                                <td class="border border-slate-200 px-3 py-2"><code class="bg-slate-100 px-1 py-0.5 rounded">e.preventDefault()</code> prevents reload; triggers confirmation banner</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">10</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-sky-700">dblclick</td>
+                                <td class="border border-slate-200 px-3 py-2">.feature-card</td>
+                                <td class="border border-slate-200 px-3 py-2">Interactive bookmark toggle</td>
+                                <td class="border border-slate-200 px-3 py-2">Toggles purple "Saved!" badge on card</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">11</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-teal-700">scroll</td>
+                                <td class="border border-slate-200 px-3 py-2">window</td>
+                                <td class="border border-slate-200 px-3 py-2">Track vertical page scrolling percentage</td>
+                                <td class="border border-slate-200 px-3 py-2">Dynamic gradient progress bar expands across top edge (0% - 100%)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="border border-slate-200 px-3 py-2 font-bold text-blue-600">12</td>
+                                <td class="border border-slate-200 px-3 py-2 font-mono font-bold text-amber-600">contextmenu</td>
+                                <td class="border border-slate-200 px-3 py-2">#demo card</td>
+                                <td class="border border-slate-200 px-3 py-2">Custom right-click context menu interceptor</td>
+                                <td class="border border-slate-200 px-3 py-2"><code class="bg-slate-100 px-1 py-0.5 rounded">e.preventDefault()</code> displays custom floating action palette</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. Key Screenshots & Event Integration Visual Guide -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-camera text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">3. Event Integrations Visual Evidence (How to capture)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 1: Window Load Event ('load')</span>
+                        <p class="text-slate-600">Shows the browser immediately displaying the native alert popup: <strong>"This page says: Welcome to TechLearn Academy"</strong> when <code class="bg-slate-200 px-1 py-0.5 rounded">index.html</code> finishes rendering in Chrome/Edge, exactly as illustrated in Slide 7.</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 2: Input Event ('input')</span>
+                        <p class="text-slate-600">Shows the student typing text into the input field (e.g. <em>"Products"</em> or <em>"Full Stack Development"</em>) and the dynamic output immediately reflecting <strong>"You typed: [text]"</strong> along with live character count update.</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 3: Window Resize Event ('resize')</span>
+                        <p class="text-slate-600">Shows browser width being adjusted, with the live label reflecting <strong>"Current Screen Width : [X] px"</strong> and the responsive badge toggling dynamically between <em>Desktop</em>, <em>Tablet</em>, and <em>Mobile</em>.</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 4: Mouseover & Mouseout on Feature Cards</span>
+                        <p class="text-slate-600">Shows the cursor hovering over a feature card, causing it to elevate with <em>-translate-y-2</em>, shadow elevation, blue border glow, and active pulsing indicator, reverting on mouseout.</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 5: Course Select Dropdown ('change')</span>
+                        <p class="text-slate-600">Shows the dynamic update of course track title, description, and syllabus modules upon selecting a track from the dropdown.</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="font-bold text-blue-700 block text-sm mb-1">Screenshot 6: Form Submit Event ('submit')</span>
+                        <p class="text-slate-600">Shows the application form being submitted, intercepted with <code class="bg-slate-200 px-1 py-0.5 rounded">event.preventDefault()</code>, validated, and displaying the green success notification banner.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. GitHub Collaboration & Repository Link -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-brands fa-github text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">4. GitHub Repository Link (Deliverable 3)</h3>
+                </div>
+
+                <div class="bg-slate-900 text-slate-100 p-5 rounded-xl border border-slate-800 space-y-3">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div>
+                            <span class="text-xs text-slate-400 font-mono block">Repository URL:</span>
+                            <a href="https://github.com/Anushyaaaa/Full-Stack-Development" target="_blank" class="text-blue-400 hover:text-blue-300 font-mono font-bold text-sm underline">
+                                https://github.com/Anushyaaaa/Full-Stack-Development
+                            </a>
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold self-start sm:self-auto">
+                            Branch: main • Up to date
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-800 text-xs font-mono">
+                        <div>
+                            <span class="text-slate-500 block">Latest Commit Hash:</span>
+                            <span class="text-slate-300">8f33169</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Committed Files:</span>
+                            <span class="text-slate-300">index.html, fsdlab3.html</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Commit Message:</span>
+                            <span class="text-slate-300">Implement Exercise 3: JavaScript Event Handling...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. AI Usage Declaration (Deliverable 4) -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-robot text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">5. AI Usage Declaration (Mandatory Deliverable)</h3>
+                </div>
+
+                <div class="p-4 bg-amber-50/70 border border-amber-200 rounded-xl space-y-2 text-xs text-slate-700">
+                    <p><strong>AI Tools Utilized:</strong> Google Antigravity (Powered by DeepMind Advanced Agentic Coding & Gemini 3.8 Flash).</p>
+                    <p><strong>Purpose of AI Assistance:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-600 ml-2">
+                        <li>Architecture review and structuring of standard HTML5 semantic elements with Tailwind CSS utility classes.</li>
+                        <li>Structuring robust, performant DOM event listeners (<code class="bg-slate-100 px-1 py-0.5 rounded">load</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">input</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">resize</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">mouseover</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">mouseout</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">change</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">submit</code>).</li>
+                        <li>Form validation regex logic and preventing default browser submit actions using <code class="bg-slate-100 px-1 py-0.5 rounded">e.preventDefault()</code>.</li>
+                        <li>Documentation generation adhering to Christ University Exercise-3 marking rubrics.</li>
+                    </ul>
+                    <p class="pt-1 text-[11px] text-slate-500"><em>Declaration: All core logic was tested, reviewed, and verified by the student in the local development environment.</em></p>
+                </div>
+            </section>
+
+            <!-- 6. Reflections (Deliverable 5) -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-lightbulb text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">6. Reflections & Key Learnings</h3>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-700 leading-relaxed">
+                    <p>1. <strong>Event Loop & Non-Blocking Asynchrony:</strong> In this exercise, I learned how JavaScript handles DOM events asynchronously via the event loop and browser Web APIs without blocking the main rendering thread.</p>
+                    <p>2. <strong>Separation of Markup & Behavior:</strong> Adopting modern <code class="bg-slate-100 px-1 py-0.5 rounded">element.addEventListener()</code> rather than inline HTML attributes (<code class="bg-slate-100 px-1 py-0.5 rounded">onclick=""</code>) maintains clean separation of concerns and allows multiple listeners on the same trigger.</p>
+                    <p>3. <strong>Form Validation & Submission Interception:</strong> Handling the <code class="bg-slate-100 px-1 py-0.5 rounded">submit</code> event on the &lt;form&gt; rather than a button click provides superior UX (intercepting Enter key presses) while allowing validation before dispatch.</p>
+                    <p>4. <strong>Responsive Window Geometry:</strong> Utilizing the <code class="bg-slate-100 px-1 py-0.5 rounded">resize</code> event provided deep insight into viewport calculations (<code class="bg-slate-100 px-1 py-0.5 rounded">window.innerWidth</code>) and synchronizing CSS responsive breakpoints with programmatic JavaScript logic.</p>
+                </div>
+            </section>
+
+            <!-- 7. Viva Voce Preparation Guide -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                    <i class="fa-solid fa-comments text-blue-600 text-lg"></i>
+                    <h3 class="text-lg font-bold text-slate-900">7. Viva Voce Questions & Answers (2M Rubric Preparation)</h3>
+                </div>
+
+                <div class="space-y-3 text-xs">
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q1: What is the difference between Event Bubbling and Event Capturing?</strong>
+                        <p class="text-slate-600"><strong>Ans:</strong> Event Bubbling triggers the event on the deepest target element first and bubbles upwards through parent ancestors. Event Capturing (trickling) travels down from the root window towards the target. <code class="bg-slate-100 px-1 py-0.5 rounded">addEventListener(event, handler, useCapture)</code> uses bubbling when the 3rd argument is false (default).</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q2: Why use e.preventDefault() in form submission?</strong>
+                        <p class="text-slate-600"><strong>Ans:</strong> By default, an HTML form submission triggers a browser HTTP GET/POST request that reloads or redirects the page. <code class="bg-slate-100 px-1 py-0.5 rounded">e.preventDefault()</code> stops this standard browser behavior, enabling asynchronous client-side validation and feedback.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q3: What is the difference between 'load' and 'DOMContentLoaded' events?</strong>
+                        <p class="text-slate-600"><strong>Ans:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded">DOMContentLoaded</code> fires as soon as the HTML document is fully parsed and DOM tree constructed, without waiting for stylesheets, images, and subframes. The <code class="bg-slate-100 px-1 py-0.5 rounded">load</code> event fires later, once all resources (images, fonts, stylesheets) are completely downloaded.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">Q4: What is the difference between 'mouseover'/'mouseout' and 'mouseenter'/'mouseleave'?</strong>
+                        <p class="text-slate-600"><strong>Ans:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded">mouseover</code> and <code class="bg-slate-100 px-1 py-0.5 rounded">mouseout</code> bubble to parent elements and trigger when moving between child elements inside the card. <code class="bg-slate-100 px-1 py-0.5 rounded">mouseenter</code> and <code class="bg-slate-100 px-1 py-0.5 rounded">mouseleave</code> do not bubble.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Document Footer -->
+        <div class="bg-slate-50 px-8 py-4 border-t border-slate-200 text-center text-xs text-slate-500">
+            TechLearn Academy • Exercise-3 Lab Report • CHRIST (Deemed to be University) • Anushya C (2648508)
+        </div>
+
+    </div>
+
+</body>
+</html>
